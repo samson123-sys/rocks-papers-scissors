@@ -3,35 +3,144 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
+  <link rel="stylesheet" href="styles.css">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet"> 
   
-  <title>Frontend Mentor | Rock, Paper, Scissors</title>
+  <script src="index.js"></script>
+  <title>Rock, Paper, Scissors APP</title>
 
-  Score
-  Rules
 
-  You Picked
-  The House Picked
-
-  You Win
-  You Lose
-
-  Play Again
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
+    .attribution { font-size: 16px; text-align: center; }
+    .attribution a { color: hsl(128, 45%, 44%); }
+    .attribution {margin-top: 50px;}
   </style>
 </head>
 <body>
+    <section class="wrapper d-flex">
+      <!-- Score
+      Rules
+    
+      You Picked
+      The House Picked
+    
+      You Win
+      You Lose
+    
+      Play Again -->
+     <!-- THE SCOREBOARD SECTION -->
+      <div class="scoreboard d-flex">
+        <div class="title">
+          <img class="title" src="/rocks-papers-scissors/images/logo.svg" alt="">
+        </div>
 
+        <!-- Sccore sheet -->
+        <div class="score d-grid">
+          <p>SCORE</p>
+          <h1>0</h1>
+        </div>
+      </div>
+        
+
+      <!-- THE GAME SECTION -->
+
+      <div class="game d-flex">
+         <!-- GAME OBJECTS -->
+        
+          <button class="hand btn btn-paper btn-p" onclick="pickgame('paper')">
+          <span class="container"> 
+            <img class="c1" src="/rocks-papers-scissors/images/icon-paper.svg" alt="rock tool">
+          </span>
+          </button>
+  
+        
+         
+          <button class="hand btn btn-rock btn-r" onclick="pickgame('rock')">
+          <span class="container">
+            <img class="c2"  src="/rocks-papers-scissors/images/icon-rock.svg" alt="rock tool">
+          </span>
+          </button>
+ 
+        
+         
+         
+          <button class="hand btn btn-scissors" onclick="pickgame('scissors')">
+            <span class="container ">
+            <img class="c3"  src="/rocks-papers-scissors/images/icon-scissors.svg" alt="scissors tool">
+            </span>
+          </button>
+       
+        
+      </div>
+
+      <!-- second page -->
+      <div class="second d-flex">
+        <div class="userHand">
+          <h2>YOU PICKED</h2>
+          <div class="d-flex hh">
+            
+            <button id="userPicked" class="hand btn-B btn-paper" >
+              <span id="userPickede" class="container">
+                <img id="userPickedee" class="c" src="/rocks-papers-scissors/images/icon-paper.svg" alt="rock tool">
+              </span>
+              </button>
+          </div>
+        </div>
+        
+        
+        <div class="referee d-grid m">
+          <div class="decision"><h3>YOU WIN</h3></div>
+          <div class="newgame" onclick="restartGame()">PLAY AGAIN</div>
+        </div>
+       
+       
+        <div class="computerHand">
+          <h2>THE HOUSE PICKED</h2>
+          <div class="d-flex hh">
+            <button id="computerPicked" class="hand btn-B btn-scissors" >
+              <span class="container">
+                <img id="computerPickede" class="c" src="/rocks-papers-scissors/images/icon-scissors.svg" alt="rock tool">
+              </span>
+              </button>
+          </div>
+        </div>
+
+        
+      </div>
+
+      <div class="referee d-grid third tt">
+        <div class="decision"><h3>YOU WIN</h3></div>
+        <div class="newgame" onclick="restartGame()">PLAY AGAIN</div>
+      </div>
+
+      <div class="rules-modal modal">
+        <div class="ruled d-flex" onclick="closed()">
+          <h2 class="r">RULES</h2>
+          <button class="closed x"><img src="/rocks-papers-scissors/images/icon-close.svg" alt=""></button>
+        </div>
+        <img src="/rocks-papers-scissors/images/image-rules.svg" alt="">
+        <button class="closed buttomm" onclick="buttomm()"><img src="/rocks-papers-scissors/images/icon-close.svg" alt=""></button>
+      </div>
+
+
+      <div class="rules">
+        <button class="btn-rules"  onclick="rules()">
+          RULES
+        </button>
+      </div>
 
   
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+      <div class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+        Coded by <a href="https://github.com/samson123-sys">Sam Ayebanate</a>.
+      </div>
+    </section>
+
+
 </body>
 </html>
